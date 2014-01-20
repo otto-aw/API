@@ -1,0 +1,92 @@
+{
+  "feed": {
+    "results": [
+      {
+        "count": [
+          "3"
+        ],
+        "query": [
+          " fas "
+        ],
+        "sponsored": [
+          {
+            "count": [
+              "3"
+            ],
+            "listing": [
+              {
+                "title": [
+                  " Special Lease Deals this Month "
+                ],
+                "description": [
+                  "Get Current Monthly Lease Deals from Local Dealers. ¬¬ Find Amazing Lease Specials and get the Lowest Price!"
+                ],
+                "displayurl": [
+                  " autosite.com "
+                ],
+                "url": [
+                  "http://admanager.autoweb-xml.com/click?data=eyJxdCI6IjEzODk2MjgyMzEuMjE4MzIiLCJrdyI6ImZhcyIsImR1IjoiaHR0cDovL2RlYWxlcnMu%0AYXV0b3NpdGUuY29tL2Zhcy1sZWFzZSIsImNuIjoiZ3QiLCJzYiI6Il8xMjM0NV8iLCJjeSI6Imd1%0AYXRlbWFsYSBjaXR5IiwicmYiOiJodHRwOi8vYWRjb25uZWN0LmF1dG93ZWIteG1sLmNvbS9hc3Av%0AZmVlZFRlc3Rlci5odG0iLCJtdCI6ImV4YWN0IiwiZmkiOiJVMkZzZEdWa1gxX3AtN1l0OEVMZEF5%0Ab3pNOUszMTFleWJBYThBemY2VTd3IiwicmciOiIwNyIsImNpIjoiSWUxNjlYU1lhWDNtQjRCZGZ0%0ARyIsImNjIjoiVTJGc2RHVmtYMV94MjhKUGRqdHJLSmMwS09KUnM0YlgiLCJ2aSI6IkU2eUFpaXdN%0AaTVwNUpyM2lvVUIiLCJyayI6IjEiLCJhaSI6IkJlSVVZdGhQM05GMXJwdzhGem0iLCJiaSI6ImJn%0ASTNQRWpwajJzVFNDcXVoM0QifQ%3D%3D%0A&crc=cb33"
+                ],
+                "cpc": [
+                  "0.03"
+                ],
+                "rank": [
+                  "1"
+                ],
+                "ad_id": [
+                  "BeIUYthP3NF1rpw8Fzm"
+                ]
+              },
+              {
+                "title": [
+                  " 2013 New Car Lease Deals "
+                ],
+                "description": [
+                  "Find Incredible New Car Lease Specials Today. ¬¬ Get a 24 or 36 Month Lease at the Cheapest Payment!"
+                ],
+                "displayurl": [
+                  " car.com "
+                ],
+                "url": [
+                  "http://admanager.autoweb-xml.com/click?data=eyJxdCI6IjEzODk2MjgyMzEuMjE4MzIiLCJrdyI6ImZhcyIsImR1IjoiaHR0cDovL2RlYWxlcnMu%0AY2FyLmNvbS9mYXMtbGVhc2UiLCJjbiI6Imd0Iiwic2IiOiJfMTIzNDVfIiwiY3kiOiJndWF0ZW1h%0AbGEgY2l0eSIsInJmIjoiaHR0cDovL2FkY29ubmVjdC5hdXRvd2ViLXhtbC5jb20vYXNwL2ZlZWRU%0AZXN0ZXIuaHRtIiwibXQiOiJleGFjdCIsImZpIjoiVTJGc2RHVmtYMV9wLTdZdDhFTGRBeW96TTlL%0AMzExZXliQWE4QXpmNlU3dyIsInJnIjoiMDciLCJjaSI6IkllMTY5WFNZYVgzbUI0QmRmdEciLCJj%0AYyI6IlUyRnNkR1ZrWDEteGNiNy13SXdWVHlRVHpQdVBvTFZVIiwidmkiOiJFNnlBaWl3TWk1cDVK%0AcjNpb1VCIiwicmsiOiIyIiwiYWkiOiJQQVViY3pueldxdVRRcHJwd0tGIiwiYmkiOiJFZDROS1BI%0AQksydUc1M2lhUVljIn0%3D%0A&crc=11c"
+                ],
+                "cpc": [
+                  "0.02"
+                ],
+                "rank": [
+                  "2"
+                ],
+                "ad_id": [
+                  "PAUbcznzWquTQprpwKF"
+                ]
+              },
+              {
+                "title": [
+                  " Limited Lease Deals This Month "
+                ],
+                "description": [
+                  "Get Amazing New Car lease Specials From Area Dealers.¬¬ Find Limited Lease Specials While They Last and Save!"
+                ],
+                "displayurl": [
+                  " autobytel.com "
+                ],
+                "url": [
+                  "http://admanager.autoweb-xml.com/click?data=eyJxdCI6IjEzODk2MjgyMzEuMjE4MzIiLCJrdyI6ImZhcyIsImR1IjoiaHR0cDovL25ldy5hdXRv%0AYnl0ZWwuY29tL2Zhcy1sZWFzZSIsImNuIjoiZ3QiLCJzYiI6Il8xMjM0NV8iLCJjeSI6Imd1YXRl%0AbWFsYSBjaXR5IiwicmYiOiJodHRwOi8vYWRjb25uZWN0LmF1dG93ZWIteG1sLmNvbS9hc3AvZmVl%0AZFRlc3Rlci5odG0iLCJtdCI6ImV4YWN0IiwiZmkiOiJVMkZzZEdWa1gxX3AtN1l0OEVMZEF5b3pN%0AOUszMTFleWJBYThBemY2VTd3IiwicmciOiIwNyIsImNpIjoiSWUxNjlYU1lhWDNtQjRCZGZ0RyIs%0AImNjIjoiVTJGc2RHVmtYMV9lM2c1ZkFTUWZsdjZSTGUwWXpJVUciLCJ2aSI6IkU2eUFpaXdNaTVw%0ANUpyM2lvVUIiLCJyayI6IjMiLCJhaSI6Imx6dHRHZzlRbFozcnJiNnhkbm4iLCJiaSI6IkdzUkYy%0AOHdvOE5TU3dUcndCNloifQ%3D%3D%0A&crc=520"
+                ],
+                "cpc": [
+                  "0.01"
+                ],
+                "rank": [
+                  "3"
+                ],
+                "ad_id": [
+                  "lzttGg9QlZ3rrb6xdnn"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
