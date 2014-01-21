@@ -28,6 +28,7 @@ body {
 p {
 	font-size: 85%;
 }
+
 .step {
 	background: none repeat scroll 0 0 #FFFFFF !important;
 	border: 1px solid #CCCACD;
@@ -252,15 +253,17 @@ table.list-dealers p {
 .last-form .col-xs-8 {
 	padding: 0;
 }
+
 .row.header {
 	margin-bottom: 0;
 }
+
 .row.header > .col-xs-6 {
 	padding: 10px 15px
 }
 
 .row.header div.col-xs-6 img{
- width: 36%;
+	width: 36%;
 }
 .row.footer {
 	font-family: Arial, Helvetica, sans-serif;
@@ -540,12 +543,13 @@ form input[type="radio"]:checked + label:before {
 
 
 .listings-space {
- height:auto;
- margin:0 auto;
- padding: 0;
- width: 880px;
- padding-bottom: 10px;
+	height:auto;
+	margin:0 auto;
+	padding: 0;
+	width: 880px;
 }
+
+
 
 a, img {
   border:none;
@@ -554,213 +558,4 @@ a, img {
 
 /* Structure Style */
 
-.aw-row {
-	width:800px;
-	height:80px;
-	margin-bottom:4px;
-	float:left;
-	text-decoration:none;
-	padding:6px;
-}
-
-
-img{width: 100%;}
-
-.aw-img {
-	width:15%;
-	height:100%;
-	overflow:hidden;
-	float:left;
-	margin-right:1em;
-}
-
-
-.aw-colmiddle {
-	width:60%;
-	height:100%;
-	float:left;
-	text-decoration:none !important;
-}
-
-.aw-title {
-	font-size: 20px;
-	text-decoration:none !important;
-	font-weight:bold;
-}
-
-.aw-subtitle {
-	padding-top:6px;
-	font-size:14px;
-	text-decoration:none !important;
-}
-
-.aw-description {
-	font-size:14px;
-	padding-top:6px;
-	text-decoration:none !important;
-	line-height:1.3em;
-}
-
-.aw-button {
-	width:20%;
-	float:left;
-	padding-top:30px;
-	margin-left:10px;
-	text-decoration:none !important;
-}
-
-/*  --MOBILE STRUCTURE-- */
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-	.aw-row {
-		margin-left:1% !important;
-		margin-right:1% !important;
-		padding: 0;
-		margin-bottom: 10px;
-		width: 98%;
-		height:auto;
-  	}
-
-	.aw-row .aw-link {
-		overflow: hidden;
-		display: inline-block;
-		width: 100%;
-  	}
-	.wrapper .content .ads-content .aw-link img {
-		width: 90%;
-		margin: 0;
-		padding: 0;
-	}
-	.aw-link .aw-img,
-	.aw-link .aw-button,
-	.aw-link .aw-colmiddle {
-		display: block;
-	}
-	.aw-link .aw-img {
-		margin-right:10px;
-	}
-	.aw-link .aw-colmiddle {
-		height:100%;
-	}
-	.aw-title {
-		font-size: 20px;
-		padding-top:10px;
-		text-align: left;
-	}
-	.aw-link .aw-colmiddle .aw-description {
-		height: auto;
-		padding-bottom:10px;
-	}
-	.aw-link .aw-button {
-		height: 100%;
-	}
-}
-
-@media only screen  and (min-width: 320px) and (max-width: 480px){
-	.aw-row {
-		height: auto;
-		margin-left:1% !important;
-		margin-right:1% !important;
-		padding: 0;
-		margin-bottom: 10px;
-		width: 94%;
-		padding-right:10px;
-	}
-	.aw-row .aw-link {
-		overflow: hidden;
-		display: block;
-		width: 100%;
-	}
-	.aw-link img {
-		width: 75%;
-		margin: 0;
-		padding: 0;
-	}
-	.wrapper .content .ads-content .aw-row .aw-link .aw-img,
-	.wrapper .content .ads-content .aw-row .aw-link .aw-button,
-	.wrapper .content .ads-content .aw-row .aw-link .aw-colmiddle {
-		display: inline-block;
-	}
-	.aw-row .aw-link .aw-colmiddle {
-		width: 100%;
-	}
-	.aw-row .aw-link .aw-img {
-		height: 90px;
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		width: 55%;
-	}
-	.aw-row .aw-link .aw-colmiddle .aw-title {
-		font-size: 20px;
-		padding-left: 10px;
-		padding-top:10px;
-		text-align: left;
-	}
-	.aw-row .aw-link .aw-colmiddle .aw-description {
-		font-size: 15px;
-		line-height: 22px;
-		margin-top: 5px;
-		padding-left: 8px;
-	}
-	.aw-row .aw-link .aw-button {
-		padding: 0;
-		font-size: 24px;
-		height: 70%;
-		margin-top: 15px;
-		width: 43%;
-	}
-}
-
-
-/* Styles by Brand */
-
-.aw-row{
-	font-family:Arial, sans-serif;
-	color:#CCC;
-}
-
-.row-styl {
-	border-bottom:1px #999 solid;
-}
-
-.aw-title {
-	color:#3175c4;
-}
-
-.aw-subtitle {
-	color:#767676;
-}
-
-.aw-description {
-	color:#1d1d1d;
-}
-
-.aw-row .aw-link {
-	color:#333;
-}
-
-.aw-row:hover {
-	background-color:#f0f0f0;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f0f0f0, endColorstr=#f0f0f0);
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f0f0f0, endColorstr=#f0f0f0)";
-}
-
-/* --MOBILE Styles by Brand-- */
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-	.aw-row{
-		border: 1px solid #d5d5d5;
-		background-color:#f0f0f0;
-	}
-}
-
-@media only screen  and (min-width: 320px) and (max-width: 480px){
-	.aw-row {
-    background-color:#f0f0f0;
-    border: 1px solid #d5d5d5;
-	}
-    .aw-row .aw-link .aw-colmiddle .aw-description {
-    color: #000;
-}
 

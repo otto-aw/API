@@ -1,5 +1,5 @@
 AutoWeb.Collections.Ads = Backbone.Collection.extend({
 	model 	: AutoWeb.Models.Ads,
-	url		: '/xml/',
+	url		: '/ads',
 	name	: 'ads'
 });

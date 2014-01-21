@@ -1,3 +1,25 @@
+//Setting each element of the APP
+/*window.AutoWeb = {};
+
+AutoWeb.Views = {};
+AutoWeb.Collections = {};
+AutoWeb.Models = {};
+
+window.app = {};
+window.views = {};
+window.collections = {};
+
+//BackBone configuration
+AutoWeb.Models.Ads = Backbone.Model.extend({
+	url : '/ads'
+});
+
+AutoWeb.Collections.Ads = Backbone.Collection.extend({
+	model : AutoWeb.Models.Ads,
+	url : '/ads',
+	name : 'ads'
+});
+
 AutoWeb.Views.Ads = Backbone.View.extend({
 	initialize : function (model){
 		var template = ('<div class="aw-row row-styl">'+
@@ -34,5 +56,36 @@ AutoWeb.Views.Ads = Backbone.View.extend({
 
 		return this;
 	}
+});*/
 
-});
+//App
+
+var AppAw = function (){
+	//environment variables configuration
+
+	var config = {
+		envIdjs 	: 'autowebjs',
+		envZip		: 'data-zipcode',
+		envState	: 'data-statecode',
+		envCount	: 'data-count',
+		envSource	: 'data-source',
+		envPublisher : 'data-publisher',
+		envResult	: 'data-result',
+		host		: '{host}/public/js'
+	};
+
+	return {
+		init : function(){
+			var location = document.getElementById(config.envIdjs).getAttribute ("src");
+			var host = location.split('/',3);
+			config.host = config.host.replace('{host}', host[2]);
+			console.log(config.host);
+		}
+
+
+
+	}
+
+	
+}();
+AppAw.init();

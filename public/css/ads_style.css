@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* CSS Document */
+
+a, img {
+  border:none;
+  text-decoration: none !important;
+}
+
+img {
+	width:100%;
+}
+
+/* Structure Style */
+
+.aw-row {
+	width:800px;
+	height: 80px;
+	margin-bottom:4px;
+	text-decoration:none;
+	padding:6px;
+}
+
+.aw-img {
+	width:15%;
+	height:100%;
+	overflow:hidden;
+	float:left;
+	margin-right:1em;
+}
+
+
+.aw-colmiddle {
+	width:60%;
+	height:100%;
+	float:left;
+	text-decoration:none !important;
+}
+
+.aw-title {
+	font-size: 20px;
+	text-decoration:none !important;
+	font-weight:bold;
+}
+
+.aw-subtitle {
+	padding-top:6px;
+	font-size:14px;
+	text-decoration:none !important;
+}
+
+.aw-description {
+	font-size:14px;
+	padding-top:6px;
+	text-decoration:none !important;
+	line-height:1.3em;
+}
+
+.aw-button {
+	width: 152px;
+	height:40px;
+	float:left;
+	padding-top: 24px;
+}
+
+.aw-button .aw-button-image{
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	background-image: url(/img/webbtns-sprite_01.gif);	
+	background-size: 100%;
+	background-position: 0px -40px;
+	background-repeat: no-repeat;
+	
+}
+
+
+.aw-button .aw-button-image .aw-button-banner{
+	display: block;
+	height: 0;
+	padding: 13.15%;
+}
+
+
+/*  --MOBILE STRUCTURE-- */
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.aw-row {
+		margin-left:1% !important;
+		margin-right:1% !important;
+		padding: 0;
+		margin-bottom: 10px;
+		width: 98%;
+		height:auto;
+  	}
+
+	.aw-row .aw-link {
+		overflow: hidden;
+		display: inline-block;
+		width: 100%;
+  	}
+	.aw-link img {
+		width: 90%;
+		margin: 0;
+		padding: 0;
+	}
+	.aw-link .aw-img,
+	.aw-link .aw-button,
+	.aw-link .aw-colmiddle {
+		display: block;
+	}
+	.aw-link .aw-img {
+		margin-right:10px;
+	}
+	.aw-link .aw-colmiddle {
+		height:100%;
+		width:55%;
+	}
+	.aw-title {
+		font-size: 20px;
+		padding-top:10px;
+		text-align: left;
+	}
+	.aw-link .aw-colmiddle .aw-description {
+		height: auto;
+		padding-bottom:10px;
+	}
+	.aw-link .aw-button {
+		height: 60px;
+		padding: 0;
+		width: 15%;
+		margin-left: 5px;
+		margin-top: 18px;
+	}
+
+	.aw-row .aw-link .aw-button .aw-button-image{
+		display: inline-block;
+		width: 100%;
+		height: 56px;
+		font-size: 0;
+		line-height: 0;
+		vertical-align: middle;
+		background-image: url(/img/mobtn_01.gif);  
+		background-size: 100%;
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+	}
+
+	.aw-row .aw-link .aw-button .aw-button-image .aw-button-banner{
+		display: block;
+		height: 0;
+		padding: 48.3%;
+	}
+	.separate{
+		height:1px;
+		margin-bottom:4px;
+		border-bottom:1px #000 solid;
+	}
+}
+
+@media only screen  and (min-width: 320px) and (max-width: 480px){
+	.aw-row {
+		height: auto;
+		margin-left:1% !important;
+		margin-right:1% !important;
+		padding: 0;
+		margin-bottom: 10px;
+		width: 94%;
+		padding-right:10px;
+	}
+	.aw-row .aw-link {
+		overflow: hidden;
+		display: block;
+		width: 100%;
+	}
+	.aw-link img {
+		width: 75%;
+		margin: 0;
+		padding: 0;
+	}
+	.aw-row .aw-link .aw-img,
+	.aw-row .aw-link .aw-button,
+	.aw-row .aw-link .aw-colmiddle {
+		display: inline-block;
+	}
+	.aw-row .aw-link .aw-colmiddle {
+		width: 100%;
+		height:100%;
+	}
+	.aw-row .aw-link .aw-img {
+		height: 90px;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 55%;
+	}
+	.aw-row .aw-link .aw-colmiddle .aw-title {
+		font-size: 20px;
+		padding-left: 10px;
+		padding-top:10px;
+		text-align: left;
+	}
+	.aw-row .aw-link .aw-colmiddle .aw-description {
+		font-size: 15px;
+		line-height: 22px;
+		margin-top: 5px;
+		padding-left: 8px;
+	}
+ 	.aw-row .aw-link .aw-button {
+		height: 80px;
+		padding: 0;
+		font-size: 24px;
+		padding-top: 20px;
+	    width: 43%;
+	}
+
+	.aw-button .aw-button-image{
+		display: inline-block;
+		width: 116px;
+		font-size: 0;
+		line-height: 0;
+		vertical-align: middle;
+		background-image: url(/img/mobtn_01.gif);  
+		background-size: 100%;
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+	}
+
+	.aw-row .aw-link .aw-button .aw-button-image .aw-button-banner{
+		display: block;
+		height: 0;
+		padding: 48.3%;
+	}
+	.separate{
+		height:1px;
+		margin-bottom:4px;
+		border-bottom:1px #000 solid;
+	}
+}
+
+
+/* Styles by Brand */
+
+.aw-row{
+	font-family:Arial, sans-serif;
+	color:#CCC;
+}
+
+.row-styl {
+	border-bottom:1px #999 solid;
+}
+
+.aw-title {
+	color:#3175c4;
+}
+
+.aw-subtitle {
+	color:#767676;
+}
+
+.aw-description {
+	color:#1d1d1d;
+}
+
+.aw-row .aw-link {
+	color:#333;
+}
+
+.aw-button-image {
+
+}
+
+.aw-row:hover {
+	background-color:#f0f0f0;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f0f0f0, endColorstr=#f0f0f0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f0f0f0, endColorstr=#f0f0f0)";
+}
+
+.aw-row:hover .aw-button-image{
+	background-position:0px 0px;
+}
+
+/* --MOBILE Styles by Brand-- */
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.aw-row{
+		border: 1px solid #d5d5d5;
+		background-color:#f0f0f0;
+	}
+}
+
+@media only screen  and (min-width: 320px) and (max-width: 480px){
+	.aw-row {
+    background-color:#f0f0f0;
+    border: 1px solid #d5d5d5;
+	}
+    .aw-row .aw-link .aw-colmiddle .aw-description {
+    color: #000;
+	}
+}
