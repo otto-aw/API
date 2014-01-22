@@ -79,7 +79,8 @@ var AppAw = function (){
 			var location = document.getElementById(config.envIdjs).getAttribute ("src");
 			var host = location.split('/',3);
 			config.host = config.host.replace('{host}', host[2]);
-			console.log(config.host);
+			//console.log(config.host);
+			//console.log("Autoweb.js");
 		}
 
 
