@@ -60,6 +60,19 @@
   
     <script id="autowebjs" data-zipcode="" data-statecode="" data-count="4" data-publisher="9e76b16883e79368fc15397c37d69c19" data-result=".listings-space" src="http://127.0.0.1:3000/js/autoweb.js"></script>
     <script type="text/javascript">
+
+      $(document).ready(function(){
+        setTimeout(function(){
+          console.log("hola");
+          //debugger;
+          $('div.aw-colmiddle').each(function(i,el){
+               $(this).find('div.aw-description').each(function() {
+                    $(this).html( function(i,val) { return val.replace('Ø', '<br>')} );
+               });
+          });
+        },1000);
+      });
+
       $(function(){
         width = $(window).width();
 
@@ -80,8 +93,9 @@
             image.insertBefore(col);
           });
         }
-
       });
+
+
 
       $(window).resize(function(){
         width = $(window).width();
