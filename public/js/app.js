@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 	var xhr = $.ajax({
 		type:'GET',
-		url:'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount
+		url:configParams.host+'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount
 
 	});
 
