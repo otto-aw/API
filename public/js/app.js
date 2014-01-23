@@ -9,9 +9,16 @@ $(document).ready(function(){
 		envSource	: document.getElementById("autowebjs").getAttribute("data-source"),	
 		envPublisher : document.getElementById("autowebjs").getAttribute("data-publisher"),
 		envResult	: document.getElementById("autowebjs").getAttribute("data-result"),	
-		host		: document.location.href,
-		keyword: document.getElementById("autowebjs").getAttribute("data-keyword")
+		host		: '{host}/public/js',
+		keyword: document.getElementById("autowebjs").getAttribute("data-keyword"),
+
 	};
+
+
+	var location = document.getElementById("autowebjs").getAttribute("src");
+	var host = location.split('/',3);
+			configParams.host = configParams.host.replace('{host}', host[2]);
+	console.log(configParams.host);
 
 	window.collections.ads = new AutoWeb.Collections.Ads();
 
