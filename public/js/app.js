@@ -54,33 +54,12 @@ $(document).ready(function(){
         	}
 	});
 
-	/*function get(url){
-		return new Promise(function (resolve,reject){
-			var req = new XMLHttpRequest();
-			req.open('GET', url);
-
-			req.onload = function(){
-				if(req.status == 200){
-					resolve(req.response);
-				}else{
-					reject(Error(req.statusText));
-				}
-			};
-
-			req.onerror = function(){
-				reject(Error("Network Error"));
-			};
-
-			req.send();
-		});
-	}
-
-	var url_aw = 'http://192.168.0.111:3000/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount;
-	get(url_aw).then(function(response){
-		console.log("Success", response);
-	}, function(error){
-		cosole.error('Failed', error);
+	//local test
+	/*var xhr = $.ajax({
+		type:'GET',
+		url:'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount
 	})*/
+
 
 	var xhr = $.ajax({
 		type:'GET',
@@ -91,13 +70,13 @@ $(document).ready(function(){
 	})
 
 	xhr.done(function (data){
-		console.log("hola mundo");
 		console.log(data);
 		data.forEach(function(item){
 			window.collections.ads.add(item);
 		});
 	}).fail(function (err) {
 		//console.log('failed');
+		//console.log(err)
 	});
 
 	console.log(xhr);
