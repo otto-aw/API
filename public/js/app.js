@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 	var xhr = $.ajax({
 		type:'GET',
-		url:'http://'+ host[2] +'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount,
+		url:'http://'+ host[2] +'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount + '/' + configParams.auth,
 		dataType : 'jsonp',
 		async: false,
 		crossDomain : true
