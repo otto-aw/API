@@ -7,12 +7,12 @@ var parserController = function (aw){
 
 	console.log('Parse Controller load');
 
-	aw.get('/ads/:keyword/:sid/:pid/:count:/auth', function (req,res){
+	aw.get('/ads/:keyword/:sid/:pid/:count/:sauth', function (req,res){
 		var part = url.parse(req.url,true);
 		var query = part.query;
 
 		res.setHeader('Content-Type', 'application/json');
-		request('http://'+req.params.sid+'.'+req.params.pid+'.autoweb-xml.com/feed?&sid='+req.params.sid+'&auth='+req.params.auth+'&subid=&q='+req.params.keyword+'&ip=127.0.0.1&ua=Mozilla/5.0%20(Windows%20NT%206.1;%20WOW64;%20rv:26.0)%20Gecko/20100101%20Firefox/26.0&ref=awebads.lan&count='+req.params.count+'&state=&city=', function (error, response, body) {
+		request('http://'+req.params.sid+'.'+req.params.pid+'.autoweb-xml.com/feed?&sid='+req.params.sid+'&auth='+req.params.sauth+'&subid=&q='+req.params.keyword+'&ip=127.0.0.1&ua=Mozilla/5.0%20(Windows%20NT%206.1;%20WOW64;%20rv:26.0)%20Gecko/20100101%20Firefox/26.0&ref=awebads.lan&count='+req.params.count+'&state=&city=', function (error, response, body) {
 		  if (!error && response.statusCode == 200) {
 
 		    var parser = xml2js.parseString;

@@ -80,8 +80,8 @@ $(document).ready(function(){
 		console.log(err)
 	});
 
-	console.log(xhr);
-	console.log("http://192.168.0.111:3000/ads/"+configParams.keyword+"/"+configParams.envSource+"/"+configParams.envPublisher+"/"+configParams.envCount);
+	//console.log(xhr);
+	//console.log("http://192.168.0.111:3000/ads/"+configParams.keyword+"/"+configParams.envSource+"/"+configParams.envPublisher+"/"+configParams.envCount);
 });
 
 $(window).resize(function(){
