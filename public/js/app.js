@@ -9,8 +9,9 @@ $(document).ready(function(){
 		envSource	 : document.getElementById("autowebjs").getAttribute("data-source"),	
 		envPublisher : document.getElementById("autowebjs").getAttribute("data-publisher"),
 		envResult	 : document.getElementById("autowebjs").getAttribute("data-result"),	
-		host		 : '{host}/public/js',
-		keyword: document.getElementById("autowebjs").getAttribute("data-keyword")
+		host		 : '{host}/public',
+		keyword 	 : document.getElementById("autowebjs").getAttribute("data-keyword"),
+		auth		 : document.getElementById('autowebjs').getAttribute('data-auth')
 	};
 
 	var location = document.getElementById("autowebjs").getAttribute("src");
@@ -63,7 +64,7 @@ $(document).ready(function(){
 
 	var xhr = $.ajax({
 		type:'GET',
-		url:'http://192.168.0.111:3000/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount,
+		url:'http://'+ host[2] +'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount,
 		dataType : 'jsonp',
 		async: false,
 		crossDomain : true
@@ -76,7 +77,7 @@ $(document).ready(function(){
 		});
 	}).fail(function (err) {
 		//console.log('failed');
-		//console.log(err)
+		console.log(err)
 	});
 
 	console.log(xhr);
