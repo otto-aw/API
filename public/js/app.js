@@ -1,5 +1,18 @@
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 $(document).ready(function(){
-	console.log("Starting AutoWeb-API");
+	console.log("Starting AutoWeb-API");	
+
+	var make = getUrlVars()["make"];
+	var model = getUrlVars()["model"];
+
+	console.log(make + " & " + model);
 
 	var configParams={
 		envIdjs		 : document.getElementById("autowebjs").getAttribute("id"),
@@ -17,18 +30,21 @@ $(document).ready(function(){
 	var location = document.getElementById("autowebjs").getAttribute("src");
  	var host = location.split('/',3);
    	configParams.host = configParams.host.replace('{host}', host[2]);
- 	//console.log(configParams.host);
 
 	window.collections.ads = new AutoWeb.Collections.Ads();
 
 	window.collections.ads.on('add', function (model){
-		console.log(model);
 		var view = new AutoWeb.Views.Ads(model);
 		view.render();
 
 		view.$el.appendTo(configParams.envResult);
 
 		 $('div.aw-colmiddle').each(function(i,el){
+               $(this).find('div.aw-title').each(function(){
+               		$(this).html( function(i,val) { return val.replace('(Make)', make.toString()) } );
+                    $(this).html( function(i,val) { return val.replace('(Model)', model.toString()) } );
+               });
+
                $(this).find('div.aw-description').each(function() {
                     $(this).html( function(i,val) { return val.replace('Ø', '<br>')} );
                });
@@ -71,18 +87,16 @@ $(document).ready(function(){
 	})
 
 	xhr.done(function (data){
-		console.log(data);
+		//console.log(data);
 		data.forEach(function(item){
 			window.collections.ads.add(item);
 		});
 	}).fail(function (err) {
-		//console.log('failed');
-		console.log(err)
+		//console.log(err)
 	});
 
-	//console.log(xhr);
-	//console.log("http://192.168.0.111:3000/ads/"+configParams.keyword+"/"+configParams.envSource+"/"+configParams.envPublisher+"/"+configParams.envCount);
 });
+
 
 $(window).resize(function(){
     width = $(window).width();
