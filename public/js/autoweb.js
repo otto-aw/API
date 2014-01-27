@@ -88,59 +88,14 @@ var AppAw = function (){
 
 	return {
 		init : function(){
-			var location = document.getElementById(config.envIdjs).getAttribute ("src");
-			var host = location.split('/',3);
-			config.host = config.host.replace('{host}', host[2]);
 
-			var src;
-			var script;
-			var pendingScripts = [];
-			var firstScript = document.scripts[0];
-
-			// Watch scripts load in IE
-			function stateChange() {
-			  // Execute as many scripts in order as we can
-			  var pendingScript;
-			  while (pendingScripts[0] && pendingScripts[0].readyState == 'loaded') {
-			    pendingScript = pendingScripts.shift();
-			    // avoid future loading events from this script (eg, if src changes)
-			    pendingScript.onreadystatechange = null;
-			    // can't just appendChild, old IE bug if element isn't closed
-			    firstScript.parentNode.insertBefore(pendingScript, firstScript);
-			  }
-			}
-
-			// loop through our script urls
-			while (src = scripts.shift()) {
-			  if ('async' in firstScript) { // modern browsers
-			    script = document.createElement('script');
-			    script.async = false;
-			    script.src = src;
-			    document.head.appendChild(script);
-			  }
-			  else if (firstScript.readyState) { // IE<10
-			    // create a script and add it to our todo pile
-			    script = document.createElement('script');
-			    pendingScripts.push(script);
-			    // listen for state changes
-			    script.onreadystatechange = stateChange;
-			    // must set src AFTER adding onreadystatechange listener
-			    // else we’ll miss the loaded event for cached scripts
-			    script.src = src;
-			  }
-			  else { // fall back to defer
-			    document.write('<script src="' + src + '" defer></'+'script>');
-			  }
-			};
-
-
-			/*
+			
 			scripts.forEach(function(scriptItem) {
     			//loadScritFiles(scriptItem, "js");
     			AppAw.loadScriptFiles(scriptItem,"js");
     		//$.getScript(scriptItem);
     		});
-    		*/
+    		
     		/*
     		AppAw.loadScriptFiles("/js/vendors/lazyload.js",function(){
     			$(document).ready(function() {
@@ -157,15 +112,16 @@ var AppAw = function (){
 
 			//console.log(config.host);
 			//console.log("Autoweb.js");
-		}
-/*
+		
+		}, //END INIT FUNCTION
+
 		loadScriptFiles : function(filename,ext){
 			if (ext=="js"){ 
 				var scriptFile=document.createElement('script')
 				scriptFile.setAttribute("type","text/javascript")
 				scriptFile.setAttribute("src", filename)
-				scriptFile.setAttribute("async", false)
-		  		scriptFile.setAttribute("defer", "defer")
+				//scriptFile.setAttribute("async", false)
+		  		//scriptFile.setAttribute("defer", "defer")
 			 }
 			
 			else if (ext=="css"){ 
@@ -177,7 +133,7 @@ var AppAw = function (){
 			
 			if (typeof scriptFile!="undefined"){
 
-				/*
+				
 				scriptFile.onload = scriptFile.onreadystatechange = function() {
 	                if (scriptFile.readyState) {
 	                	console.log("state1: " + scriptFile.readyState);
@@ -188,39 +144,28 @@ var AppAw = function (){
 	                    }
 	                }
 	                else {
-	                    //scriptFile.onload();
+	                    scriptFile.onload();
 	                    //console.log("state3: " + scriptFile.readyState);
-	                }
-            	};
-            	*/
 
-            	/*
-            	var flag=false;
-            	var progress=false;
-            	while (!flag){
-            		if (progress===false){
-            			progress=true;
-            			scriptFile.onload = function(){
-            				flag=true; console.log("cargado");
-            			};
-            		};
-            		
+	                };
+
+
             	};
-            	*/
-            	//document.write(scriptFile);
-    /*        	
-				document.getElementsByTagName("head")[0].appendChild(scriptFile);
-*/
+            	
+
+           	
 				
 
-				//scriptFile.onload=scriptFile;
-			//}
+				
+            	document.getElementsByTagName("head")[0].appendChild(scriptFile);
+	//			scriptFile.onload=scriptFile;
+			};
 
 		//},
 
 
 
-	//}
+	} //END LOADSCRIPTS FUNCTION
 
 	
 }();

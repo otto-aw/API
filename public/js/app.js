@@ -14,7 +14,7 @@ $(document).ready(function(){
 	var make = getUrlVars()["make"];
 	var model = getUrlVars()["model"];
 
-	console.log(make + " & " + model);
+	//console.log(make + " & " + model);
 
 
 	var configParams={
@@ -37,7 +37,7 @@ $(document).ready(function(){
  	
 
    	//Insert the javascript elements into the client web page dinamically
-
+/*
 	function loadScritFiles(filename, ext){
 		if (ext=="js"){ 
 		  var scriptFile=document.createElement('script');
@@ -74,7 +74,7 @@ $(document).ready(function(){
     		loadScritFiles(scriptItem, "js");
     		//$.getScript(scriptItem);
     	});
-   	
+*/   	
 		//console.log("scripts loaded");
 
 
