@@ -1,3 +1,4 @@
+console.log("init");
 window.AutoWeb = {};
 
 AutoWeb.Views = {};

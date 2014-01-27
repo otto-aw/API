@@ -23,8 +23,9 @@ var parserController = function (aw){
 					data = result;
 					dataP=data.results[0];
    					dataS=dataP.sponsored[0];
-   					var ret = query.callback + '(' + JSON.stringify(dataS.listing) + ')';
-				   	return res.send(ret);
+   					//var ret = query.callback + '(' + JSON.stringify(dataS.listing) + ')';
+				   	//return res.send(ret);
+				   	return res.send(dataS.listing);
 				}
 				else
 				{
