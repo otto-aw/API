@@ -10,6 +10,7 @@ function getUrlVars() {
 var aw = document.getElementById("autowebjs");
 var carMake = getUrlVars()["make"];
 var carModel = getUrlVars()["model"];
+
 var configParams={
 	envIdjs		 : aw.getAttribute("id"),
 	envZipCode	 : getUrlVars()["zipCode"] != "" ? getUrlVars()["zipCode"] : aw.getAttribute("data-zipcode"),
@@ -30,6 +31,7 @@ $(document).ready(function(){
 		alert("keyword not exists");
 		return false;
 	}*/
+
 
 	var location = document.getElementById("autowebjs").getAttribute("src");
  	var host = location.split('/',3);
@@ -87,6 +89,7 @@ $(document).ready(function(){
 	/*var xhr = $.ajax({
 		type:'GET',
 		url:'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount + '/' + configParams.auth
+<<<<<<< HEAD
 	})*/
 
 	var xhr = $.ajax ({
@@ -111,16 +114,12 @@ $(document).ready(function(){
 		async: false,
 		crossDomain : true
 	})
+<<<<<<< HEAD
+=======
+	*/
 
-	xhr.done(function (data){
-		data.forEach(function(item){
-			window.collections.ads.add(item);
-		});
-	}).fail(function (err) {
-	});
-*/
+}); //END OF DOCUMENT.READY FUNCTION
 
-});
 
 $(window).resize(function(){
     width = $(window).width();
