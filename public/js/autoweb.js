@@ -1,65 +1,3 @@
-//Setting each element of the APP
-/*window.AutoWeb = {};
-
-AutoWeb.Views = {};
-AutoWeb.Collections = {};
-AutoWeb.Models = {};
-
-window.app = {};
-window.views = {};
-window.collections = {};
-
-//BackBone configuration
-AutoWeb.Models.Ads = Backbone.Model.extend({
-	url : '/ads'
-});
-
-AutoWeb.Collections.Ads = Backbone.Collection.extend({
-	model : AutoWeb.Models.Ads,
-	url : '/ads',
-	name : 'ads'
-});
-
-AutoWeb.Views.Ads = Backbone.View.extend({
-	initialize : function (model){
-		var template = ('<div class="aw-row row-styl">'+
-							'<a id="{{ add_id }}" class="aw-link" target="_blank" href="{{ url }}">'+
-								'<div class="aw-img">'+
-									'<span><img alt="{{ title }}" src="{{ custom_image_url_1 }}"></span>'+
-								'</div>'+
-								'<div class="aw-colmiddle">'+
-									'<div class="aw-title"> {{ title }} </div>'+
-									'<div class="aw-description">{{ description }}</div>'+
-								'</div>'+
-								'<div class="aw-button">'+
-									'<div class="aw-button-image">'+
-										'<div class="aw-button-banner"></div>'+
-									'</div>'+
-								'</div>'+
-							'</a>'+
-						'</div>');
-		var self = this;
-		this.model = model
-
-		this.model.on('change', function() {
-			self.render();
-		})		
-
-		this.template = swig.compile( template );
-	},
-
-	render : function (data){
-		var data = this.model.toJSON();
-		var html = this.template(data);
-
-		this.$el.html( html );
-
-		return this;
-	}
-});*/
-
-//App
-
 var AppAw = function (){
 	//environment variables configuration
 
@@ -75,7 +13,6 @@ var AppAw = function (){
 	};
 
 	var scripts=[
-		//"/js/vendors/lazyload.js",
 		"/js/vendors/underscore.js",
 		"/js/vendors/backbone.js",
 		"/js/vendors/swig.js",
@@ -83,90 +20,168 @@ var AppAw = function (){
 		"/js/app/models.js",
 		"/js/app/collections.js",
 		"/js/app/views.js",
+		"https://code.jquery.com/jquery.js",
 		"/js/app.js"
 	];
 
+	var cssFilesExt=[
+		"http://fonts.googleapis.com/css?family=Roboto:400,900,700",
+		"http://fonts.googleapis.com/css?family=Sintony:400,700"
+	];	
+
+	var cssFiles=[
+		"css/bootstrap.min.css",
+		"css/custom.css",
+		"css/ads_style.css"
+	];	
+
+	
+
+
 	return {
 		init : function(){
+			//console.log("init function");
+			//pageScriptLst=document.getElementsByTagName("script");	
+			var pageCssLst=document.getElementsByTagName("link");
 
-			
-			scripts.forEach(function(scriptItem) {
-    			//loadScritFiles(scriptItem, "js");
-    			AppAw.loadScriptFiles(scriptItem,"js");
-    		//$.getScript(scriptItem);
-    		});
-    		
-    		/*
-    		AppAw.loadScriptFiles("/js/vendors/lazyload.js",function(){
-    			$(document).ready(function() {
-                    LazyLoad.js("/js/app/app.js", function () {
-					  console.log('all files have been loaded');
-					});
-                });
-    		});
+			//CSS files to load async
+			cssFiles.forEach(function(cssItem){
+				AppAw.loadScriptFiles(cssItem, function() {});
+			});
 
-*/
+			//CSS External files  to load async
+			cssFilesExt.forEach(function(cssItem){
+				AppAw.loadScriptFiles(cssItem, function() {});
+			});
 
-    		
+			//IE js scripts to load async
+			var getIE=AppAw.getInternetExplorerVersion();
+			if ((getIE>0)&&(getIE<9)){
+				AppAw.loadScriptFiles("https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js", function() {});
+				AppAw.loadScriptFiles("https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js", function() {});
+			};
 
+			//app js dependencies to load Sync
 
-			//console.log(config.host);
-			//console.log("Autoweb.js");
+			AppAw.loadScriptFiles(scripts[0], function() {                    
+                    AppAw.loadScriptFiles(scripts[1], function(){
+                        AppAw.loadScriptFiles(scripts[2], function(){
+                        	AppAw.loadScriptFiles(scripts[3], function(){
+	                        	AppAw.loadScriptFiles(scripts[4], function(){
+		                        	AppAw.loadScriptFiles(scripts[5], function(){
+			                        	AppAw.loadScriptFiles(scripts[6], function(){
+				                        	AppAw.loadScriptFiles(scripts[7], function(){
+					                    	});
+				                    	});
+			                    	});
+		                    	});
+	                    	});
+                    	});
+                    });
+			});
+
 		
-		}, //END INIT FUNCTION
+		},//END INIT FUNCTION
 
-		loadScriptFiles : function(filename,ext){
-			if (ext=="js"){ 
-				var scriptFile=document.createElement('script')
-				scriptFile.setAttribute("type","text/javascript")
-				scriptFile.setAttribute("src", filename)
-				//scriptFile.setAttribute("async", false)
-		  		//scriptFile.setAttribute("defer", "defer")
-			 }
+		loadScriptFiles : function(fileName,onload){
+			var itemGetExt=fileName.split(".");
+			var itemExt=itemGetExt[itemGetExt.length-1];
+
 			
-			else if (ext=="css"){ 
+
+			if (itemExt=="js"){ 
+				//console.log(fileName);
+				//var pageScriptLst=document.getElementsByTagName("script");
+				//var libraryExist=AppAw.dependencyStatus(fileName);
+
+				
+
+				var scriptFile=document.createElement('script');
+				scriptFile.setAttribute("type","text/javascript");
+				scriptFile.setAttribute("src", fileName);
+
+				
+
+				if (typeof scriptFile!="undefined"){
+						scriptFile.onload = scriptFile.onreadystatechange = function() {
+			                if (scriptFile.readyState) {
+			                    if (scriptFile.readyState === 'complete' || scriptFile.readyState === 'loaded') {
+			                        scriptFile.onreadystatechange = null;
+			                        onload();
+			                    }
+			                }
+			                else {
+			                    onload();
+			                };
+		            	};	 
+
+						document.getElementsByTagName("head")[0].appendChild(scriptFile);         	
+				};
+				
+
+
+				
+
+
+			 }
+			else{ 
 				var scriptFile=document.createElement("link")
 				scriptFile.setAttribute("rel", "stylesheet")
 				scriptFile.setAttribute("type", "text/css")
-				scriptFile.setAttribute("href", filename)
+				scriptFile.setAttribute("href", fileName)
+
+				if (typeof scriptFile!="undefined"){
+	            	document.getElementsByTagName("head")[0].appendChild(scriptFile);
+				};
 			}
 			
-			if (typeof scriptFile!="undefined"){
+			
 
-				
-				scriptFile.onload = scriptFile.onreadystatechange = function() {
-	                if (scriptFile.readyState) {
-	                	console.log("state1: " + scriptFile.readyState);
-	                    if (scriptFile.readyState === 'complete' || scriptFile.readyState === 'loaded') {
-	                        scriptFile.onreadystatechange = null;
-	                        scriptFile.onload();
-	                        //console.log("state2: " + scriptFile.readyState);
-	                    }
-	                }
-	                else {
-	                    scriptFile.onload();
-	                    //console.log("state3: " + scriptFile.readyState);
-
-	                };
+		},//END LOADSCRIPTS FUNCTION
 
 
-            	};
-            	
+		dependencyStatus : function(fileName){
+			var fileNameSplit=fileName.split("/");
+			var itemToSearch=fileNameSplit[(fileNameSplit.length-1)];
+			itemToSearch=itemToSearch.replace(".js","");
 
-           	
-				
-
-				
-            	document.getElementsByTagName("head")[0].appendChild(scriptFile);
-	//			scriptFile.onload=scriptFile;
+			var dependencyList=document.getElementsByTagName("script");
+			
+			var dependencyResult=0;
+			console.log("longitud de la lista "+dependencyList.length);
+			for(var i=0; i<dependencyList.length; i++){
+				console.log("lista: "+dependencyList[i].src+" item a buscar "+itemToSearch+" items# "+i);	
+				dependencyResult=dependencyList[i].src.indexOf(itemToSearch);						
+				if (dependencyResult>0){
+					console.log("js Encontrado "+dependencyResult);
+					//return dependencyResult;				
+					break;
+				};				
 			};
+			console.log(dependencyResult+" envio")
+			return dependencyResult;
+		},//END DEPENDENCYSTATUS FUNCTION
 
-		//},
+		getInternetExplorerVersion: function(){
+		  var rv = -1;
+		  if (navigator.appName == 'Microsoft Internet Explorer'){
+			    var ua = navigator.userAgent;
+			    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+			    if (re.exec(ua) != null)
+			      rv = parseFloat( RegExp.$1 );
+			  }
+			  else if (navigator.appName == 'Netscape')
+			  {
+			    var ua = navigator.userAgent;
+			    var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+			    if (re.exec(ua) != null)
+			      rv = parseFloat( RegExp.$1 );
+			  }
+		  
+		  return rv;
+		} //END GETINTERNETEXPLORERVERSION FUNCTION
 
-
-
-	} //END LOADSCRIPTS FUNCTION
-
-	
-}();
+	}; //END RETURN
+		
+}();//END APPAW FUNCTION
 AppAw.init();
