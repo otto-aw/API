@@ -14,7 +14,6 @@ $(document).ready(function(){
 	var make = getUrlVars()["make"];
 	var model = getUrlVars()["model"];
 
-	console.log(make + " & " + model);
 
 
 	var configParams={
@@ -34,88 +33,6 @@ $(document).ready(function(){
  	var host = location.split('/',3);
    	configParams.host = configParams.host.replace('{host}', host[2]);
 
- 	
-
-   	//Insert the javascript elements into the client web page dinamically
-
-	function loadScritFiles(filename, ext){
-		if (ext=="js"){ 
-		  var scriptFile=document.createElement('script');
-		  scriptFile.setAttribute("type","text/javascript");
-		  scriptFile.setAttribute("src", filename);
-		  scriptFile.setAttribute("async", false);
-		  scriptFile.setAttribute("defer", "defer");
-		 }
-		else if (ext=="css"){ 
-		  var scriptFile=document.createElement("link")
-		  scriptFile.setAttribute("rel", "stylesheet")
-		  scriptFile.setAttribute("type", "text/css")
-		  scriptFile.setAttribute("href", filename)
-		 }
-		if (typeof scriptFile!="undefined"){
-			document.getElementsByTagName("head")[0].appendChild(scriptFile);
-			scriptFile.onload=scriptFile;
-		}
-		}
-
-
-		var scripts=[
-				"/js/vendors/underscore.js",
-    			"/js/vendors/backbone.js",
-    			"/js/vendors/swig.js",
-				"/js/init.js",
-				"/js/app/models.js",
-				"/js/app/collections.js",
-    			"/js/app/views.js"
-    			];
-
-
-		scripts.forEach(function(scriptItem) {
-    		loadScritFiles(scriptItem, "js");
-    		//$.getScript(scriptItem);
-    	});
-   	
-		//console.log("scripts loaded");
-
-
-	
-	
-	//
-/*
-
-   	var scripts=[ "/js/vendors/underscore.js",
-    			  "/js/vendors/backbone.js",
-    			  "/js/vendors/swig.js",
-    			  "/js/init.js",
-    			  "/js/app/models.js",
-    			  "/js/app/collections.js",
-    			  "/js/app/views.js"
-    			]
-
-	
-//console.log();scripts.length
-	for (var i=0;i<7;i++)
-	{ 
-		//document.write(cars[i] + "<br>");
-		var oHead = document.getElementsByTagName('HEAD').item(0);
-		var oScript= document.createElement("script");
-		oScript.src=scripts[i];
-		oHead.appendChild(oScript);
-	}
-*/
-    /*
-    scripts.forEach(function(scriptItem) {
-    	//console.log(scriptItem);
-    	//oScript.type = "text/javascript";
-    	
-		
-		oScript= document.createElement("script");
-		oScript.src=scriptItem;
-		//console.log(oScript);
-		//oHead.appendChild(oScript);
-		//document.head.appendChild(oScript);
-    	});
-	*/
 
 
 	window.collections.ads = new AutoWeb.Collections.Ads();
@@ -163,7 +80,8 @@ $(document).ready(function(){
 	var xhr = $.ajax({
 		type:'GET',
 		url:'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount + '/' + configParams.auth
-	})
+	});
+
 
 
 /*
@@ -174,7 +92,8 @@ $(document).ready(function(){
 		async: false,
 		crossDomain : true
 	})
-*/
+	*/
+
 	xhr.done(function (data){
 		//console.log(data);
 		data.forEach(function(item){
@@ -184,7 +103,9 @@ $(document).ready(function(){
 		//console.log(err)
 	});
 
-});
+
+}); //END OF DOCUMENT.READY FUNCTION
+
 
 
 $(window).resize(function(){
