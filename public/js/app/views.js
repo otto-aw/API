@@ -3,7 +3,7 @@ AutoWeb.Views.Ads = Backbone.View.extend({
 		var template = ('<div class="aw-row row-styl">'+
 							'<a id="{{ add_id }}" class="aw-link" target="_blank" href="{{ url }}">'+
 								'<div class="aw-img">'+
-									'<span><img alt="{{ title }}" src="{{ custom_image_url_1 }}"></span>'+
+									'<span><img alt="{{ title }}" src="{{ img }}"></span>'+
 								'</div>'+
 								'<div class="aw-colmiddle">'+
 									'<div class="aw-title"> {{ title }} </div>'+

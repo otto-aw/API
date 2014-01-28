@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* CSS Document */
 
 a, img {
   border:none;
@@ -13,8 +12,8 @@ img {
 /* Structure Style */
 
 .aw-row {
-	width:800px;
-	height: 80px;
+	width:100%;
+	height: 100%;
 	margin-bottom:4px;
 	text-decoration:none;
 	padding:6px;
@@ -24,7 +23,8 @@ img {
 	width:15%;
 	height:100%;
 	overflow:hidden;
-	float:left;
+	display: inline-block;
+	vertical-align: middle;
 	margin-right:1em;
 }
 
@@ -32,7 +32,8 @@ img {
 .aw-colmiddle {
 	width:60%;
 	height:100%;
-	float:left;
+	display: inline-block;
+	vertical-align: top;
 	text-decoration:none !important;
 }
 
@@ -57,9 +58,9 @@ img {
 
 .aw-button {
 	width: 152px;
-	height:40px;
-	float:left;
-	padding-top: 24px;
+	height:auto;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .aw-button .aw-button-image{
@@ -68,7 +69,7 @@ img {
 	font-size: 0;
 	line-height: 0;
 	vertical-align: middle;
-	background-image: url(/img/webbtns-sprite_01.gif);	
+	background-image: url(../../public/img/webbtns-sprite_01.gif);	
 	background-size: 100%;
 	background-position: 0px -40px;
 	background-repeat: no-repeat;
@@ -85,13 +86,12 @@ img {
 
 /*  --MOBILE STRUCTURE-- */
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 800px) {
 	.aw-row {
-		margin-left:1% !important;
-		margin-right:1% !important;
+		margin-left:0 auto;
 		padding: 0;
 		margin-bottom: 10px;
-		width: 98%;
+		width: 100%;
 		height:auto;
   	}
 
@@ -102,20 +102,23 @@ img {
   	}
 	.aw-link img {
 		width: 90%;
+		vertical-align: middle;
 		margin: 0;
 		padding: 0;
 	}
 	.aw-link .aw-img,
 	.aw-link .aw-button,
 	.aw-link .aw-colmiddle {
-		display: block;
+		display: inline-block;
 	}
 	.aw-link .aw-img {
-		margin-right:10px;
+		margin:8px;
+		height: 100% !important;
+		vertical-align: bottom;
 	}
 	.aw-link .aw-colmiddle {
 		height:100%;
-		width:55%;
+		width:62%;
 	}
 	.aw-title {
 		font-size: 20px;
@@ -126,22 +129,22 @@ img {
 		height: auto;
 		padding-bottom:10px;
 	}
-	.aw-link .aw-button {
-		height: 60px;
+	.aw-row .aw-link .aw-button {
+		height: 58px;
 		padding: 0;
-		width: 15%;
-		margin-left: 5px;
-		margin-top: 18px;
+		margin:8px;
+		font-size: 24px;
+		vertical-align: bottom;
+	    width: 15%;
 	}
 
-	.aw-row .aw-link .aw-button .aw-button-image{
+	.aw-button .aw-button-image{
 		display: inline-block;
 		width: 100%;
-		height: 56px;
 		font-size: 0;
 		line-height: 0;
 		vertical-align: middle;
-		background-image: url(/img/mobtn_01.gif);  
+		background-image: url(../../public/img/mobtn_01.gif);  
 		background-size: 100%;
 		background-position: 0px 0px;
 		background-repeat: no-repeat;
@@ -166,7 +169,7 @@ img {
 		margin-right:1% !important;
 		padding: 0;
 		margin-bottom: 10px;
-		width: 94%;
+		width: 98%;
 		padding-right:10px;
 	}
 	.aw-row .aw-link {
@@ -187,19 +190,23 @@ img {
 	.aw-row .aw-link .aw-colmiddle {
 		width: 100%;
 		height:100%;
+		margin-bottom: 6px;
 	}
 	.aw-row .aw-link .aw-img {
-		height: 90px;
+		height: 100%;
+		vertical-align: middle;
 		margin: 0;
 		padding: 0;
 		text-align: center;
 		width: 55%;
+		margin-bottom: 2%;
 	}
 	.aw-row .aw-link .aw-colmiddle .aw-title {
 		font-size: 20px;
 		padding-left: 10px;
 		padding-top:10px;
 		text-align: left;
+		line-height: 20px;
 	}
 	.aw-row .aw-link .aw-colmiddle .aw-description {
 		font-size: 15px;
@@ -208,10 +215,11 @@ img {
 		padding-left: 8px;
 	}
  	.aw-row .aw-link .aw-button {
-		height: 80px;
+		height: 58px;
 		padding: 0;
 		font-size: 24px;
-		padding-top: 20px;
+		vertical-align: middle;
+		text-align: center;
 	    width: 43%;
 	}
 
@@ -221,7 +229,7 @@ img {
 		font-size: 0;
 		line-height: 0;
 		vertical-align: middle;
-		background-image: url(/img/mobtn_01.gif);  
+		background-image: url(../../public/img/mobtn_01.gif);  
 		background-size: 100%;
 		background-position: 0px 0px;
 		background-repeat: no-repeat;
@@ -283,7 +291,7 @@ img {
 
 /* --MOBILE Styles by Brand-- */
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 800px) {
 	.aw-row{
 		border: 1px solid #d5d5d5;
 		background-color:#f0f0f0;
