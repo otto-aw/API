@@ -13,15 +13,15 @@ var AppAw = function (){
 	};
 
 	var scripts=[
-		"/js/vendors/underscore.js",
-		"/js/vendors/backbone.js",
-		"/js/vendors/swig.js",
-		"/js/init.js",
-		"/js/app/models.js",
-		"/js/app/collections.js",
-		"/js/app/views.js",
 		"https://code.jquery.com/jquery.js",
-		"/js/app.js"
+		"../../public/js/vendors/underscore.js",
+		"../../public/js/vendors/backbone.js",
+		"../../public/js/vendors/swig.js",
+		"../../public/js/init.js",
+		"../../public/js/app/models.js",
+		"../../public/js/app/collections.js",
+		"../../public/js/app/views.js",
+		"../../public/js/app.js"
 	];
 
 	var cssFilesExt=[
@@ -30,9 +30,9 @@ var AppAw = function (){
 	];	
 
 	var cssFiles=[
-		"css/bootstrap.min.css",
-		"css/custom.css",
-		"css/ads_style.css"
+		"../../public/css/bootstrap.min.css",
+		"../../public/css/custom.css",
+		"../../public/css/ads_style.css"
 	];	
 
 	
@@ -71,6 +71,8 @@ var AppAw = function (){
 		                        	AppAw.loadScriptFiles(scripts[5], function(){
 			                        	AppAw.loadScriptFiles(scripts[6], function(){
 				                        	AppAw.loadScriptFiles(scripts[7], function(){
+				                        		AppAw.loadScriptFiles(scripts[8], function(){
+					                    		});	
 					                    	});
 				                    	});
 			                    	});

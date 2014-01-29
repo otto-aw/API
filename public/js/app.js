@@ -26,16 +26,6 @@ var configParams={
 
 $(document).ready(function(){
 	console.log("Starting AutoWeb-API");	
-	
-	/*if(getUrlVars()["publisher"] == undefined){
-		alert("keyword not exists");
-		return false;
-	}*/
-
-
-	var location = document.getElementById("autowebjs").getAttribute("src");
- 	var host = location.split('/',3);
-   	configParams.host = configParams.host.replace('{host}', host[2]);
 
 	window.collections.ads = new AutoWeb.Collections.Ads();
 
@@ -85,13 +75,6 @@ $(document).ready(function(){
       });
 	}
 
-	//local test
-	/*var xhr = $.ajax({
-		type:'GET',
-		url:'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount + '/' + configParams.auth
-<<<<<<< HEAD
-	})*/
-
 	var xhr = $.ajax ({
 		type: 'GET',
 		//url : 'http://ads.awadserver.com/widgetv2/index.php?publisher=' +configParams.envPublisher+'&count='+configParams.envCount+'&statecode=&zipcode=&keyword='+ configParams.keyword,
@@ -104,19 +87,6 @@ $(document).ready(function(){
 			window.collections.ads.add(item);
 		});
 	});
-
-
-/*
-	var xhr = $.ajax({
-		type:'GET',
-		url:'http://'+ host[2] +'/ads/'+configParams.keyword+'/'+configParams.envSource+'/'+configParams.envPublisher+'/'+configParams.envCount + '/' + configParams.auth,
-		dataType : 'jsonp',
-		async: false,
-		crossDomain : true
-	})
-<<<<<<< HEAD
-=======
-	*/
 
 }); //END OF DOCUMENT.READY FUNCTION
 
